@@ -1,0 +1,385 @@
+
+:root {
+    --bg: #0c0d12;
+    --panel: #12141b;
+    --panel-light: #1b1e28;
+    --border: #292d39;
+    --text: #f2f3f8;
+    --muted: #969bad;
+    --accent: #9b8cff;
+    --success: #63d9a0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 270px;
+    flex-shrink: 0;
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    font-size: 19px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+}
+
+.sidebar-label {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.upload-card {
+    margin-top: 12px;
+    padding: 20px 12px;
+    border: 1px dashed #56516f;
+    border-radius: 13px;
+    background: #191724;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.upload-card:hover {
+    border-color: var(--accent);
+    background: #211e31;
+}
+
+.upload-icon, .welcome-icon {
+    color: var(--accent);
+    font-size: 27px;
+}
+
+.upload-card small, .muted {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.document-list {
+    margin-top: 18px;
+    overflow-wrap: anywhere;
+}
+
+.document-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: var(--panel-light);
+    font-size: 13px;
+}
+
+.document-item small {
+    display: block;
+    color: var(--success);
+    margin-top: 7px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--success);
+    margin-right: 6px;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.topbar {
+    padding: 22px 30px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.topbar p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 7px 0 0;
+}
+
+.model-badge {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #c5baff;
+}
+
+.chat-area {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 24px;
+}
+
+.welcome {
+    text-align: center;
+    padding: 10vh 10px 30px;
+}
+
+.welcome-icon {
+    font-size: 42px;
+}
+
+.welcome h2 {
+    font-size: clamp(23px, 3vw, 32px);
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.suggestion {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.suggestion:hover {
+    border-color: var(--accent);
+}
+
+.message {
+    margin-bottom: 24px;
+    max-width: 100%;
+}
+
+.message-role {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 9px;
+}
+
+.message-body {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.message.user .message-body {
+    background: #211e31;
+    border-color: #40385f;
+}
+
+.sources {
+    margin-top: 12px;
+    padding: 13px;
+    background: #151720;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.sources h3 {
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+
+.source-item {
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.source-item strong {
+    color: var(--text);
+}
+
+.source-item p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.composer-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 20px;
+}
+
+.status {
+    min-height: 24px;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.composer {
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.composer:focus-within {
+    border-color: #7668be;
+}
+
+.composer textarea {
+    flex: 1;
+    min-width: 0;
+    resize: vertical;
+    max-height: 180px;
+    min-height: 44px;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+}
+
+.composer button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #15121f;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.composer button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.disclaimer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+        margin-bottom: 16px;
+    }
+
+    .sidebar-label {
+        margin-bottom: 4px;
+    }
+
+    .upload-card {
+        padding: 12px;
+    }
+
+    .sidebar-footer {
+        margin-top: 15px;
+        padding-top: 12px;
+    }
+
+    .topbar {
+        padding: 17px;
+    }
+
+    .topbar h1 {
+        font-size: 16px;
+    }
+
+    .model-badge {
+        font-size: 10px;
+        padding: 7px;
+    }
+
+    .chat-area {
+        padding: 20px 15px;
+    }
+
+    .welcome {
+        padding-top: 35px;
+    }
+
+    .composer-wrap {
+        padding: 0 12px 12px;
+    }
+}

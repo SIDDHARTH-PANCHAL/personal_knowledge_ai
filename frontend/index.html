@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Knowledge AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">✦ Knowledge AI</div>
+            <p class="sidebar-label">YOUR DOCUMENTS</p>
+
+            <label class="upload-card" for="pdfFile">
+                <span class="upload-icon">＋</span>
+                <strong>Upload a PDF</strong>
+                <small>Click to select a document</small>
+            </label>
+            <input type="file" id="pdfFile" accept=".pdf,application/pdf" hidden>
+
+            <div id="documentList" class="document-list">
+                <p class="muted">No documents uploaded yet.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                Local API connection
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h1>Personal Knowledge AI</h1>
+                    <p>Chat with your books, notes and research papers.</p>
+                </div>
+                <span class="model-badge">✦ RAG + Gemini</span>
+            </header>
+
+            <section class="chat-area" id="chatArea">
+                <div class="welcome" id="welcome">
+                    <div class="welcome-icon">✦</div>
+                    <h2>Your knowledge, one question away.</h2>
+                    <p>Upload a PDF and ask questions about its content.</p>
+
+                    <div class="suggestions">
+                        <button class="suggestion"
+                            data-question="Summarize the main concepts in my PDF.">
+                            Summarize this document
+                        </button>
+                        <button class="suggestion"
+                            data-question="Explain the most important concepts simply.">
+                            Explain key concepts
+                        </button>
+                        <button class="suggestion"
+                            data-question="Create five multiple-choice questions from my PDF.">
+                            Generate practice questions
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="composer-wrap">
+                <div id="status" class="status" role="status" aria-live="polite">
+                    Upload a PDF to get started.
+                </div>
+
+                <form id="chatForm" class="composer">
+                    <textarea
+                        id="questionInput"
+                        rows="1"
+                        maxlength="2000"
+                        placeholder="Ask a question about your PDF..."
+                        aria-label="Your question"
+                        required></textarea>
+                    <button id="sendButton" type="submit" aria-label="Send question">
+                        ↑
+                    </button>
+                </form>
+                <p class="disclaimer">
+                    AI can make mistakes. Verify important answers against the cited pages.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
